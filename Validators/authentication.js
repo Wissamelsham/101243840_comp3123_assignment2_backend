@@ -2,7 +2,7 @@ const jwt =require('jsonwebtoken');
 const { AuthenticationError } = require('apollo-server-express');
 require('dotenv').config();
 module.exports = (context) =>{
-    
+    const key='Secret key'
     const Header = context.headers.authorization;
 
 
@@ -12,7 +12,7 @@ module.exports = (context) =>{
 
         if(token){
             try{
-                const user = jwt.verify(token,process.env.KEY)
+                const user = jwt.verify(token,key)
                 return user;
 
 

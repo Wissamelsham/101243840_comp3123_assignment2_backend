@@ -2,8 +2,10 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 require('dotenv').config()
-const port = process.env.PORT
-const uri = process.env.ATLAS_URI
+
+
+const port = 3000
+const uri = 'mongodb+srv://user1:1234@cluster0.pkiw6x0.mongodb.net/comp3123_assignment1'
 //const jwt =require('jsonwebtoken');
 var cors = require('cors')
 app.use(cors())
