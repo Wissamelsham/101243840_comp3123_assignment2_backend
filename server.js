@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 
 
 
-const port = 3000
+const port = process.env.PORT || 3000;
 const uri = 'mongodb+srv://user1:1234@cluster0.pkiw6x0.mongodb.net/comp3123_assignment1'
 //const jwt =require('jsonwebtoken');
 var cors = require('cors')
