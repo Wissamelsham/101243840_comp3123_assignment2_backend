@@ -3,16 +3,16 @@ const router = express.Router()
 const User = require('../models/user')
 const {validateLogin} = require('../Validators/validation');
 const authentication = require('../Validators/authentication');
-
+const key='Secret key'
 const jsonwebtoken =require('jsonwebtoken');
 
-require('dotenv').config();
+
 generateToken = (user) =>{
     return jsonwebtoken.sign({
         id: user.id,
         email:user.email,
         username:user.username,
-    },process.env.KEY,{expiresIn: '2h'});
+    },key,{expiresIn: '2h'});
 }
 
 //Signup
